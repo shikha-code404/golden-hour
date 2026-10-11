@@ -1,0 +1,22 @@
+{
+  "name": "golden-hour",
+  "version": "1.0.0",
+  "description": "Nudge people to enjoy sunrise/sunset on their balcony, away from screens.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "force-tick": "node scripts/force-tick.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^18.0.6",
+    "express": "^5.2.1",
+    "mongodb": "^7.7.0",
+    "suncalc": "^2.1.1",
+    "web-push": "^3.6.7"
+  }
+}

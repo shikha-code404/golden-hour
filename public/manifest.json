@@ -1,0 +1,12 @@
+{
+  "name": "Golden Hour",
+  "short_name": "Golden Hour",
+  "description": "A gentle invitation to step outside for sunrise and sunset.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#fff8f1",
+  "theme_color": "#e97845",
+  "orientation": "portrait-primary",
+  "icons": []
+}

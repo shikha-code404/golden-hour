@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: golden-hour
+    runtime: node
+    buildCommand: npm install
+    startCommand: node server.js
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false
+      - key: VAPID_PUBLIC_KEY
+        sync: false
+      - key: VAPID_PRIVATE_KEY
+        sync: false
+      - key: VAPID_SUBJECT
+        sync: false
+      - key: TICK_SECRET
+        sync: false
+
+databases:
+  - name: golden-hour-postgres
+    databaseName: golden_hour
+    user: golden_hour
+    plan: free

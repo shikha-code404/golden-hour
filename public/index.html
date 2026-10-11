@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#e97845">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="/icon.svg">
+  <link rel="stylesheet" href="/styles.css">
+  <title>Golden Hour</title>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">GOLDEN HOUR</p>
+        <h1 id="screen-title">A little light, outside.</h1>
+      </div>
+      <button class="icon-button" id="settings-button" aria-label="Open setup">☼</button>
+    </header>
+
+    <div id="ios-note" class="notice hidden">On iPhone? Add Golden Hour to your Home Screen first, then allow notifications.</div>
+    <div id="status" class="status" role="status" aria-live="polite"></div>
+
+    <section id="home-screen" class="screen">
+      <div class="sun-card">
+        <p class="muted" id="next-kind">Next gentle moment</p>
+        <div class="countdown" id="countdown">--:--:--</div>
+        <p class="event-time" id="next-time">Set up your place to begin.</p>
+      </div>
+      <button class="primary-button hero-button" id="outside-button">Go outside</button>
+      <div class="streak-card">
+        <div><span class="muted">Your streak</span><strong id="streak-value">0 days</strong></div>
+        <span class="streak-mark">✦</span>
+      </div>
+      <div class="home-actions"><button class="text-button" id="setup-link">Set up reminders</button><button class="text-button" id="gallery-link">Gallery</button></div>
+    </section>
+
+    <section id="setup-screen" class="screen hidden">
+      <p class="section-kicker">SETUP</p>
+      <h2>Make it yours.</h2>
+      <p class="intro">Choose when the sky can gently invite you outside.</p>
+      <button class="primary-button" id="notify-button">Allow notifications</button>
+      <div class="field-group">
+        <label class="field-label">Your place</label>
+        <button class="secondary-button" id="location-button">Use my location</button>
+        <select id="city-select" aria-label="Choose a city fallback">
+          <option value="">Or choose a city</option>
+          <option value="Pune">Pune · Asia/Kolkata</option>
+          <option value="Mumbai">Mumbai · Asia/Kolkata</option>
+          <option value="Delhi">Delhi · Asia/Kolkata</option>
+          <option value="Bengaluru">Bengaluru · Asia/Kolkata</option>
+          <option value="London">London · Europe/London</option>
+          <option value="New York">New York · America/New_York</option>
+          <option value="San Francisco">San Francisco · America/Los_Angeles</option>
+        </select>
+        <p class="field-hint" id="location-label">No location chosen yet.</p>
+      </div>
+      <div class="field-group">
+        <label class="field-label">Remind me for</label>
+        <div class="toggle-row"><label><input type="checkbox" id="sunrise-toggle" checked><span>Sunrise</span></label><label><input type="checkbox" id="sunset-toggle" checked><span>Sunset</span></label></div>
+      </div>
+      <div class="field-group"><label class="field-label" for="lead-select">Lead time</label><select id="lead-select"><option value="10">10 minutes before</option><option value="20" selected>20 minutes before</option><option value="30">30 minutes before</option></select></div>
+      <button class="primary-button" id="save-setup">Save setup</button>
+      <button class="text-button back-button" id="setup-back">Back home</button>
+    </section>
+
+    <section id="outside-screen" class="screen hidden">
+      <p class="section-kicker" id="outside-kind">OUTSIDE TIME</p>
+      <h2 id="outside-heading">Take a look around.</h2>
+      <p class="event-time" id="outside-time">Your next golden moment</p>
+      <div class="camera-box"><label class="camera-label" for="photo-input"><span class="camera-icon">＋</span><span id="photo-label">Save a little piece of the sky</span><small>Optional · stays on this device</small></label><input id="photo-input" type="file" accept="image/*" capture="environment"></div>
+      <div class="field-group"><label class="field-label">Bring something?</label><div class="treat-grid" id="treat-picker"><button data-treat="chai">Chai</button><button data-treat="coffee">Coffee</button><button data-treat="snack">Snack</button><button data-treat="nothing">Nothing</button></div></div>
+      <button class="primary-button" id="done-button">Done</button>
+      <button class="text-button back-button" id="outside-back">Not now</button>
+    </section>
+
+    <section id="done-screen" class="screen hidden"><div class="done-orb">✦</div><p class="section-kicker">NICE</p><h2 id="done-message">You made a little space.</h2><p class="streak-copy" id="done-streak"></p><button class="primary-button" id="done-home">Back home</button></section>
+
+    <section id="gallery-screen" class="screen hidden"><p class="section-kicker">GALLERY</p><h2>Small sky moments.</h2><div id="gallery-grid" class="gallery-grid"></div><p id="empty-gallery" class="empty-state">Photos you take outside will stay here, on this device.</p><button class="text-button back-button" id="gallery-back">Back home</button></section>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
